@@ -16,7 +16,7 @@ export const installDependencies = async (
     await exec('ls -la', undefined, {
         cwd: workingDirectory,
     });
-    await exec(`${packageManager} ci --ignore-scripts`, undefined, {
+    await exec(`${packageManager} install --legacy-peer-deps`, undefined, {
         cwd: workingDirectory,
     });
 };
