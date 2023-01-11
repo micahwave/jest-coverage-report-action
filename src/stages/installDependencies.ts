@@ -19,7 +19,7 @@ export const installDependencies = async (
         cwd: workingDirectory,
     });
 
-    await exec(`${packageManager} ci --ignore-scripts`, undefined, {
+    await exec(`${packageManager} ci`, undefined, {
         cwd: workingDirectory,
     });
 };
