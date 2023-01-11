@@ -12,11 +12,7 @@ export const installDependencies = async (
     await removeDirectory(joinPaths(workingDirectory, 'node_modules'));
 
     await exec('ls -la', undefined);
-
-    await exec('ls -la', undefined, {
-        cwd: workingDirectory,
-    });
-
+    await exec('cat .npmrc', undefined);
     await exec(`${packageManager} ci --ignore-scripts`, undefined, {
         cwd: workingDirectory,
     });
