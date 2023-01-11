@@ -11,11 +11,11 @@ export const installDependencies = async (
     // NOTE: The `npm ci` command is not used. Because if your version of npm is old, the generated `package-lock.json` will also be old, and the latest version of `npm ci` will fail.
     await removeDirectory(joinPaths(workingDirectory, 'node_modules'));
 
-    await exec('echo "hello micah"', undefined, {
+    await exec('pwd', undefined, {
         cwd: workingDirectory,
     });
 
-    await exec('pwd && ls -la', undefined, {
+    await exec('ls -la', undefined, {
         cwd: workingDirectory,
     });
 
